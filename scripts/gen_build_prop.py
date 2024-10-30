@@ -123,6 +123,7 @@ def parse_args():
   config["LineageDesc"] = config["BuildDesc"]
   config["LineageDevice"] = config["DeviceName"]
   
+  config["RisingChipset"] = ""
   config["RisingMaintainer"] = ""
 
   if config["BuildNumber"].startswith("eng."):
@@ -262,6 +263,7 @@ def generate_build_info(args):
 
   print(f"ro.lineage.device={config['LineageDevice']}")
   
+  print(f"ro.rising.chipset={config['RisingChipset']}")
   print(f"ro.rising.maintainer={config['RisingMaintainer']}")
   
   print(f"persist.sys.pihooks_FINGERPRINT={config['PihooksGmsFp']}")
