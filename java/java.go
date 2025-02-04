@@ -483,7 +483,7 @@ var (
 )
 
 func IsLibDepTag(depTag blueprint.DependencyTag) bool {
-	return depTag == libTag || depTag == sdkLibTag
+	return depTag == libTag
 }
 
 func IsStaticLibDepTag(depTag blueprint.DependencyTag) bool {
