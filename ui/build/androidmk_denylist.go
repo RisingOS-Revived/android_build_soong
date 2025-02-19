@@ -38,7 +38,6 @@ var androidmk_denylist []string = []string{
 	"kernel/tests/",
 	"libcore/",
 	"libnativehelper/",
-	"packages/",
 	"pdk/",
 	"platform_testing/",
 	"prebuilts/",
