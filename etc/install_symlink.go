@@ -18,6 +18,8 @@ import (
 	"android/soong/android"
 	"path/filepath"
 	"strings"
+
+	"github.com/google/blueprint/proptools"
 )
 
 func init() {
@@ -43,7 +45,7 @@ type InstallSymlinkProperties struct {
 	// properties.
 	Installed_location string
 	// The target of the symlink, aka where the symlink points.
-	Symlink_target string
+	Symlink_target proptools.Configurable[string]
 }
 
 type InstallSymlink struct {
@@ -55,7 +57,8 @@ type InstallSymlink struct {
 }
 
 func (m *InstallSymlink) GenerateAndroidBuildActions(ctx android.ModuleContext) {
-	if filepath.Clean(m.properties.Symlink_target) != m.properties.Symlink_target {
+	symlink_target := m.properties.Symlink_target.GetOrDefault(ctx, "")
+	if filepath.Clean(symlink_target) != symlink_target {
 		ctx.PropertyErrorf("symlink_target", "Should be a clean filepath")
 		return
 	}
@@ -74,7 +77,7 @@ func (m *InstallSymlink) GenerateAndroidBuildActions(ctx android.ModuleContext) 
 
 	name := filepath.Base(m.properties.Installed_location)
 	installDir := android.PathForModuleInstall(ctx, filepath.Dir(m.properties.Installed_location))
-	m.installedPath = ctx.InstallAbsoluteSymlink(installDir, name, m.properties.Symlink_target)
+	m.installedPath = ctx.InstallAbsoluteSymlink(installDir, name, symlink_target)
 }
 
 func (m *InstallSymlink) AndroidMkEntries() []android.AndroidMkEntries {
