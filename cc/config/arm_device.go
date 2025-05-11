@@ -243,6 +243,7 @@ var (
 		"kryo385":        "${config.ArmKryo385Cflags}",
 		"exynos-m1":      "${config.ArmCortexA53Cflags}",
 		"exynos-m2":      "${config.ArmCortexA53Cflags}",
+		"exynos-m4":      "${config.ArmCortexA53Cflags}",
 	}
 )
 
