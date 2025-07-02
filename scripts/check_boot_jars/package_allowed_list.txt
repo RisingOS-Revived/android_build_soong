@@ -271,3 +271,6 @@ com.camera.camera2.extensions.*
 ###################################################
 # Xiaomi Extensions
 com.xiaomi.extensions.*
+
+# MTK adds
+com\.mediatek\..*
