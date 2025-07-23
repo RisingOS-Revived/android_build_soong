@@ -305,3 +305,6 @@ org\.ifaa\.aidl.*
 
 # Nothing
 com\.nothing.*
+
+# RisingOS Revived
+org.rising.*
