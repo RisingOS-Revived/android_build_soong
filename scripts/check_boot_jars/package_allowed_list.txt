@@ -323,3 +323,7 @@ org.rising.*
 ###################################################
 # Camera Extensions
 com.camera.camera2.extensions.*
+
+###################################################
+# Xiaomi Extensions
+com.xiaomi.extensions.*
