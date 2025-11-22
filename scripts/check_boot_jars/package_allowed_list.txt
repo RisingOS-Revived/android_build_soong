@@ -260,3 +260,7 @@ org\.ifaa\.aidl.*
 
 # RisingOS
 org.rising.*
+
+###################################################
+# Camera Extensions
+com.camera.camera2.extensions.*
