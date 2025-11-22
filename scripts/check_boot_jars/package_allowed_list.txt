@@ -263,3 +263,7 @@ com\.nothing.*
 
 # RisingOS Revived
 org.rising.*
+
+###################################################
+# Camera Extensions
+com.camera.camera2.extensions.*
