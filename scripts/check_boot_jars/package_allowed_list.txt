@@ -278,3 +278,7 @@ com.xiaomi.extensions.*
 
 # MTK adds
 com\.mediatek\..*
+
+# LG adds
+com\.lge
+com\.lge\..* 
